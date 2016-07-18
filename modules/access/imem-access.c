@@ -42,7 +42,7 @@ static ssize_t Read(access_t *access, uint8_t *buf, size_t len)
     access_sys_t *sys = access->p_sys;
     uint8_t myarray[] = sys->read_cb(sys->opaque, buf, len);
     ssize_t val = sizeof(myarray);
-    memcpy(buf, myarray, val)
+    memcpy(buf, myarray, val);
 
     if (val < 0) {
         msg_Err(access, "read error");
